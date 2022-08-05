@@ -1,10 +1,11 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int a = scanner.nextInt();
+      try{  int a = scanner.nextInt();
         if (a == 1) {
             System.out.println(Day.MONDAY);
         } else if (a == 2) {
@@ -19,6 +20,11 @@ public class Main {
             System.out.println(Day.SATUDAY);
         } else if (a == 7) {
             System.out.println(Day.SUNDAY);
+        }else {
+            System.out.println("бир жумада 7 кун бар");
         }
+      }catch (InputMismatchException e){
+          System.out.println("сан менен жазыныз");
+      }
     }
 }
